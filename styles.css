@@ -384,6 +384,11 @@ img {
     .ri-grid-fill, hr, .ri-arrow-right-s-line, .ri-history-line, .ri-video-line, .ri-time-line, .ri-arrow-down-s-line, .ri-keyboard-box-line, .ri-live-line, .ri-award-line, .ri-settings-5-line, .ri-flag-line, .ri-question-line, .ri-feedback-line{
         display: none;
     }
+
+    #sidebar-item{
+        display: none;
+    }
+
     .video-container {
         grid-gap: 10px;
         padding: 10px 10px;
@@ -407,7 +412,7 @@ img {
         transform: none;
     }
     .video-content:hover .video-details {
-        background-color: #181818;
+        /* background-color: #181818; */
         padding: 0px;
         padding-top: 12px;
     }
