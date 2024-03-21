@@ -78,23 +78,28 @@ hr {
 
 .logo-img {
     position: relative;
-    height: 21px;
-    width: 30px;
-    border-radius: 30px;
+    height: 17px;
+    width: 50px;
+    border-radius: 10px;
+    margin-left:7%;
 }
 
 #logo-txt {
     letter-spacing: -1.5px;
+    margin-left:3%;
 }
 
 .logo {
     display: flex;
     align-items: center;
+    gap: 5px;
 }
 
 .logo-container {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    gap: 20px;
 }
 
 .search-container {
@@ -115,7 +120,7 @@ hr {
     align-items: center;
     width: 100%;
     background-color: #fff;
-    border: 2px solid #F2F2F2;
+    border: 1px solid rgba(128, 128, 128, 0.55);
     border-radius: 20px;
     padding: 12px;
     color: black;
@@ -124,12 +129,16 @@ hr {
 
 .search-container .search {
     min-width: 60px;
-    height: 40px;
+    position: absolute;
+    left: 68.5%;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    height: 38px;
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 999;
-    background-color: #fff;
+    /* background-color: #fff; */
     outline: none;
     border: none;
 }
@@ -165,6 +174,10 @@ hr {
     margin-left: 25px;
 }
 
+i{
+    cursor: pointer;
+}
+
 img {
     position: absolute;
     top: 0;
@@ -172,6 +185,15 @@ img {
     height: 100%;
     width: 100%;
     object-fit: cover;
+}
+video {
+    position: absolute;
+    top: 5;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 20px;
 }
 
 
@@ -190,10 +212,11 @@ img {
 .sidebar {
     padding-top: 10px;
     width: 240px;
-    background-color: #F2F2F2;
+    left: -240px;
+    background-color:#fff;
     overflow-y: scroll;
-    color: #fff;
 }
+
 
 .sidebar-items {
     display: flex;
@@ -215,6 +238,53 @@ img {
 .sidebar-item i {
     margin-right: 24px;
 }
+
+
+/* FIN SIDEBARE1 */
+
+
+
+.sidebarr {
+    position: absolute;
+    padding-top: 10px;
+    width: auto;
+    background-color:#fff;
+    left: -1%;
+    top: 5%;
+}
+
+
+.sidebar-itemss{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.sidebar-ite {
+    align-items: center;
+    padding: 0 24px;
+    cursor: pointer;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.sidebarr-ite:hover {
+    background-color: #4C4C4C;
+}
+
+.sidebarr-ite i {
+    margin-right: 24px;
+}
+
+.sidebarr{
+    display: none;
+}
+
 
 
 /* main content commence ici */
@@ -258,7 +328,7 @@ img {
 
 .video-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-gap: 18px;
     padding: 20px 25px;
     background-color: #fff;
@@ -280,7 +350,7 @@ img {
 .video-box {
     position: relative;
     width: auto;
-    height: 145px;
+    height: 270px;
     display: block;
 }
 
@@ -347,6 +417,53 @@ img {
     display: block;
 }
 
+#check{
+    display: none;
+}
+
+.sidebar .btnOne i{
+   cursor: pointer;
+   position: absolute;
+   top: -9.2%;
+   left: 0;
+   opacity: 1;
+   font-size: 23px;
+   transition: all 0.3s linear;
+}
+
+.sidebar .btnTwo i{
+   cursor: pointer;
+   position: absolute;
+   opacity: 0;
+   top: 20%;
+   left: -30%;
+   font-size: 33px;
+   position: relative;
+   left:-33px;
+   top: 0;
+   transition: all 0.3s linear;
+}
+
+#check:checked~.sidebar .sidebar-items{
+    display: none;
+    transition: all 5s linear;
+}
+#check:checked~.sidebarr{
+    display: block;
+}
+
+#check:checked~.sidebar .btnOne i{
+    opacity: 1;
+}
+#check:checked~.sidebar .btnTwo i{
+    opacity: 1;
+}
+
+
+
+
+
+
 
 /* responsive commence ici */
 
@@ -365,7 +482,7 @@ img {
 
 @media (max-width:1050px) {
     .video-container {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -412,7 +529,6 @@ img {
         transform: none;
     }
     .video-content:hover .video-details {
-        /* background-color: #181818; */
         padding: 0px;
         padding-top: 12px;
     }
